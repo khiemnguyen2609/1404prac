@@ -1,16 +1,21 @@
-class Guitar:
+from prac_06.guitar import Guitar
 
-    def __init__(self, name="", year=0, cost=0):
-        self.name = name
-        self.year = year
-        self.cost = cost
+def main():
 
-    def __str__(self):
-        return "{} ({}) : ${}".format(self.name, self.year, self.cost)
+    guitar1 = Guitar("Gibson L-5 CES", 1922, 16035.40)
+    guitar2 = Guitar("Another Guitar", 2012, 100)
 
-    def get_age(self):
-        vintage = 2019 - self.year
-        return vintage
+    guitars = [guitar1, guitar2]
+    print(guitars)
 
-    def is_vintage(self, vintage):
-        return vintage >= 50
+    for guitar in guitars:
+        print(guitar.get_age())
+        if guitar.is_vintage():
+            print(guitar.name)
+
+
+
+
+
+
+main()
